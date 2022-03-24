@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: project_shuffle
+    image: postgres
+    restart: always
+    env_file:
+      - backend/.env
+    ports:
+      - 5432:5432
