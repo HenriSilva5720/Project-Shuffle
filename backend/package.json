@@ -5,6 +5,10 @@
   "repository": "git@github.com:HenriSilva5720/Project-Shuffle.git",
   "author": "henrique <henrique.da.silva5720@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts",
+    "build": "tsc"
+  },
   "dependencies": {
     "express": "^4.17.3",
     "prisma": "^3.11.1"
