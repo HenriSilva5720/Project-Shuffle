@@ -2,9 +2,11 @@ import { Request, Response } from "express";
 import { createUser } from "../services/user.service";
 
 export async function registerUser(req: Request, res: Response) {
-  const { username, email, password } = req.body;
+  const { username, email, password } = req.validatedBody;
 
-  const new_user = await createUser(username, email, password);
+  const new_user = await createUser(username, email.toLowerCase(), password);
 
-  res.status(201).json(new_user);
+  const { passwordHash, ...userDate } = new_user;
+
+  res.status(201).json(userDate);
 }
