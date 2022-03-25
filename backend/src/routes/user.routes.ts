@@ -4,9 +4,9 @@ import { registerUser } from "../controllers/user.controller";
 const route = Router();
 
 function userRoutes(app: Express) {
-  app.use("/user", route);
+  app.use("/users", route);
 
-  route.post("", registerUser);
+  route.post("/signup", registerUser);
 }
 
 export default userRoutes;
