@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { AnyObjectSchema } from "yup";
+import { ErrorHandler } from "../utils/error";
 
 export const validate =
   (schema: AnyObjectSchema) =>
@@ -10,12 +11,13 @@ export const validate =
         abortEarly: false,
       });
 
-      next();
+      return next();
     } catch (err: any) {
-      return res.status(400).json({
-        status: "error",
-        statusCode: 400,
-        message: err.errors.length !== 1 ? err.errors : err.message,
-      });
+      return next(
+        new ErrorHandler(
+          400,
+          err.errors.length !== 1 ? err.errors : err.message
+        )
+      );
     }
   };
