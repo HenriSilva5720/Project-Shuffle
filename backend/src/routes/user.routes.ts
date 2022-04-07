@@ -10,7 +10,7 @@ import { userRegisterSchema } from "../schemas/user.schemas";
 const route = Router();
 
 function userRoutes(app: Express) {
-  app.use("/users", route);
+  app.use("/user", route);
 
   route.post(
     "/signup",

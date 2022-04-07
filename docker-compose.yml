@@ -3,8 +3,7 @@ version: "3.9"
 services:
   db:
     container_name: project_shuffle
-    image: postgres
-    restart: always
+    image: postgres:14.2-alpine
     env_file:
       - backend/.env
     ports:
