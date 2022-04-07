@@ -1,7 +1,6 @@
 {
   "name": "project-shuffle",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:HenriSilva5720/Project-Shuffle.git",
   "author": "henrique <henrique.da.silva5720@gmail.com>",
   "license": "MIT",
